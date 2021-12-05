@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/RPI_Train.dir/RPI_Train/main_train.c.o  -o RPI_Train 
