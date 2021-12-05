@@ -77,18 +77,18 @@ include CMakeFiles/TEST_FILE.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/TEST_FILE.dir/flags.make
 
-CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.o: CMakeFiles/TEST_FILE.dir/flags.make
-CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.o: ../RBC/aiguillage_queue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gregoire/Documents/IG2I/LE5/UNIRAIL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.o   -c /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/aiguillage_queue.c
+CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.o: CMakeFiles/TEST_FILE.dir/flags.make
+CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.o: ../RBC/libs/aiguillage_queue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gregoire/Documents/IG2I/LE5/UNIRAIL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.o   -c /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/libs/aiguillage_queue.c
 
-CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/aiguillage_queue.c > CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.i
+CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/libs/aiguillage_queue.c > CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.i
 
-CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/aiguillage_queue.c -o CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.s
+CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/libs/aiguillage_queue.c -o CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.s
 
 CMakeFiles/TEST_FILE.dir/RBC/tests/test_aig_queue.c.o: CMakeFiles/TEST_FILE.dir/flags.make
 CMakeFiles/TEST_FILE.dir/RBC/tests/test_aig_queue.c.o: ../RBC/tests/test_aig_queue.c
@@ -105,13 +105,13 @@ CMakeFiles/TEST_FILE.dir/RBC/tests/test_aig_queue.c.s: cmake_force
 
 # Object files for target TEST_FILE
 TEST_FILE_OBJECTS = \
-"CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.o" \
+"CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.o" \
 "CMakeFiles/TEST_FILE.dir/RBC/tests/test_aig_queue.c.o"
 
 # External object files for target TEST_FILE
 TEST_FILE_EXTERNAL_OBJECTS =
 
-TEST_FILE: CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.o
+TEST_FILE: CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.o
 TEST_FILE: CMakeFiles/TEST_FILE.dir/RBC/tests/test_aig_queue.c.o
 TEST_FILE: CMakeFiles/TEST_FILE.dir/build.make
 TEST_FILE: CMakeFiles/TEST_FILE.dir/link.txt

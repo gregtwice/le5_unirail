@@ -7,9 +7,12 @@
 #include <netinet/in.h>
 #include <pthread.h>
 #include <signal.h>
+
 #include "../Libs_Unirail/CAN/Identificateur.h"
-#include "aiguillage_queue.h"
+#include "libs/aiguillage_queue.h"
 #include "../Libs_Unirail/CAN/canLinux.h"
+#include "libs/rbc_utils.h"
+#include "libs/log.h"
 
 #define US 1
 #define MS 1000
@@ -21,11 +24,23 @@ typedef struct RBC_Info_s {
 } RBC_Info;
 RBC_Info Rbc_Global_Info;
 
+_Noreturn void *occupationHandler() {
+
+    for (;;) {
+        //TODO filtrer les trames avec l'id du canton
+        usleep(150 * MS);
+        int port = canLinux_Init("can0");
+        // il y a 22 cantons a surveiller;
+        struct can_filter filter[22];
+
+    }
+}
+
 _Noreturn void *aiguillageHandler() {
     for (;;) {
 
         printf("\tNouveau message a défiler\n");
-        printf("Nb Elems dans la file : %d\n",file_Messages.nb_elems);
+        printf("Nb Elems dans la file : %d\n", file_Messages.nb_elems);
         Aiguillage_Message_t *message_to_send = defiler_message();
         if (message_to_send == NULL) {
             printf("C'est vide !!!\n");
@@ -33,6 +48,7 @@ _Noreturn void *aiguillageHandler() {
             continue;
         }
         printf("\tMessage défilé avec succès\n");
+        //TODO : filtrer les trames avec l'id de l'aiguillage.
         int portCan = canLinux_Init("can0");
         afficher_message(*message_to_send);
         uCAN1_MSG consigneAiguillage;
@@ -63,7 +79,6 @@ _Noreturn void *aiguillageHandler() {
 
 }
 
-
 void *connexionHandler(void *sock_param) {
     puts("Nouveau train connecté");
 
@@ -74,6 +89,10 @@ void *connexionHandler(void *sock_param) {
 int main() {
     printf("Programme de gestion du RBC\n");
     initMessageQueue();
+    parsetrainconfig("./config/train1.conf",&globalInfo.config.config_trains[0]);
+    parsetrainconfig("./config/train2.conf",&globalInfo.config.config_trains[1]);
+    parsetrainconfig("./config/train3.conf",&globalInfo.config.config_trains[2]);
+
     // création de la socket
     puts("Lancement de la socket");
     int sd, se;
@@ -101,17 +120,17 @@ int main() {
     int canPort;
     //Definition d'un filtre CAN pour preciser les identifiant a lire
     struct can_filter rfilter[1]; //Le filtre sera limite ici a une variable
-    uCAN1_MSG msg;
     canPort = canLinux_Init(NomPort);
 
     // Mise en place d'un filtre
     canLinux_InitFilter(canPort, rfilter, sizeof(rfilter));
     printf("Bus can Lancé !! \n");
 
-    pthread_t threadAPI, treadAiguillage;
+    pthread_t threadAPI, treadAiguillage, threadOccupation;
     printf("Création du thread de gestion de l'aiguillage\n");
     pthread_create(&treadAiguillage, NULL, aiguillageHandler, NULL);
     pthread_detach(treadAiguillage);
+    pthread_create(&threadOccupation, NULL, occupationHandler, NULL);
     printf("Ajout des messages dans la file !!\n");
     Aiguillage_Message_t message1 = {
             .aigAction = UNLOCK,

@@ -13,7 +13,7 @@ set(SRCS
         ${PATH_LIB_UNIRAIL}CAN/MESCAN1_Utilitaire.c
         ${PATH_LIB_UNIRAIL}CAN/MESCAN1_VarStatusTrain.c
         ${PATH_LIB_UNIRAIL}CAN/MESCAN1_VarTrain.c
-        aiguillage_queue.c
+        libs/aiguillage_queue.c
         main_rbc.c
         )
 
@@ -22,7 +22,7 @@ set(HEADERS
         ${PATH_LIB_UNIRAIL}CAN/MESCAN1_Utilitaire.h
         ${PATH_LIB_UNIRAIL}CAN/loco_MAIN_PARAMS.h
         ${PATH_LIB_UNIRAIL}CAN/MESCAN1_DefinitionVariable.h
-        aiguillage_queue.h
+        libs/aiguillage_queue.h
 #        ${PATH_LIB_UNIRAIL}CAN/MESCAN1_ID&DLC_LOCO.h
         ${PATH_LIB_UNIRAIL}CAN/Identificateur.h
         ${PATH_LIB_UNIRAIL}CAN/MESCAN1_VarStatusTrain.h

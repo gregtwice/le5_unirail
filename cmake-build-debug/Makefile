@@ -144,6 +144,19 @@ RPI_Train/fast:
 .PHONY : RPI_Train/fast
 
 #=============================================================================
+# Target rules for targets named TEST_PARSER
+
+# Build rule for target.
+TEST_PARSER: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 TEST_PARSER
+.PHONY : TEST_PARSER
+
+# fast build rule for target.
+TEST_PARSER/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/build
+.PHONY : TEST_PARSER/fast
+
+#=============================================================================
 # Target rules for targets named RBC
 
 # Build rule for target.
@@ -169,35 +182,119 @@ TEST_FILE/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/build
 .PHONY : TEST_FILE/fast
 
-RBC/aiguillage_queue.o: RBC/aiguillage_queue.c.o
+RBC/libs/aiguillage_queue.o: RBC/libs/aiguillage_queue.c.o
 
-.PHONY : RBC/aiguillage_queue.o
+.PHONY : RBC/libs/aiguillage_queue.o
 
 # target to build an object file
-RBC/aiguillage_queue.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.o
-.PHONY : RBC/aiguillage_queue.c.o
+RBC/libs/aiguillage_queue.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.o
+.PHONY : RBC/libs/aiguillage_queue.c.o
 
-RBC/aiguillage_queue.i: RBC/aiguillage_queue.c.i
+RBC/libs/aiguillage_queue.i: RBC/libs/aiguillage_queue.c.i
 
-.PHONY : RBC/aiguillage_queue.i
+.PHONY : RBC/libs/aiguillage_queue.i
 
 # target to preprocess a source file
-RBC/aiguillage_queue.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.i
-.PHONY : RBC/aiguillage_queue.c.i
+RBC/libs/aiguillage_queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.i
+.PHONY : RBC/libs/aiguillage_queue.c.i
 
-RBC/aiguillage_queue.s: RBC/aiguillage_queue.c.s
+RBC/libs/aiguillage_queue.s: RBC/libs/aiguillage_queue.c.s
 
-.PHONY : RBC/aiguillage_queue.s
+.PHONY : RBC/libs/aiguillage_queue.s
 
 # target to generate assembly for a file
-RBC/aiguillage_queue.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/aiguillage_queue.c.s
-.PHONY : RBC/aiguillage_queue.c.s
+RBC/libs/aiguillage_queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/aiguillage_queue.c.s
+.PHONY : RBC/libs/aiguillage_queue.c.s
+
+RBC/libs/config_parser.o: RBC/libs/config_parser.c.o
+
+.PHONY : RBC/libs/config_parser.o
+
+# target to build an object file
+RBC/libs/config_parser.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/libs/config_parser.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/config_parser.c.o
+.PHONY : RBC/libs/config_parser.c.o
+
+RBC/libs/config_parser.i: RBC/libs/config_parser.c.i
+
+.PHONY : RBC/libs/config_parser.i
+
+# target to preprocess a source file
+RBC/libs/config_parser.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/libs/config_parser.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/config_parser.c.i
+.PHONY : RBC/libs/config_parser.c.i
+
+RBC/libs/config_parser.s: RBC/libs/config_parser.c.s
+
+.PHONY : RBC/libs/config_parser.s
+
+# target to generate assembly for a file
+RBC/libs/config_parser.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/libs/config_parser.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/config_parser.c.s
+.PHONY : RBC/libs/config_parser.c.s
+
+RBC/libs/log.o: RBC/libs/log.c.o
+
+.PHONY : RBC/libs/log.o
+
+# target to build an object file
+RBC/libs/log.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/libs/log.c.o
+.PHONY : RBC/libs/log.c.o
+
+RBC/libs/log.i: RBC/libs/log.c.i
+
+.PHONY : RBC/libs/log.i
+
+# target to preprocess a source file
+RBC/libs/log.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/libs/log.c.i
+.PHONY : RBC/libs/log.c.i
+
+RBC/libs/log.s: RBC/libs/log.c.s
+
+.PHONY : RBC/libs/log.s
+
+# target to generate assembly for a file
+RBC/libs/log.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/libs/log.c.s
+.PHONY : RBC/libs/log.c.s
+
+RBC/libs/rbc_can.o: RBC/libs/rbc_can.c.o
+
+.PHONY : RBC/libs/rbc_can.o
+
+# target to build an object file
+RBC/libs/rbc_can.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.o
+.PHONY : RBC/libs/rbc_can.c.o
+
+RBC/libs/rbc_can.i: RBC/libs/rbc_can.c.i
+
+.PHONY : RBC/libs/rbc_can.i
+
+# target to preprocess a source file
+RBC/libs/rbc_can.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.i
+.PHONY : RBC/libs/rbc_can.c.i
+
+RBC/libs/rbc_can.s: RBC/libs/rbc_can.c.s
+
+.PHONY : RBC/libs/rbc_can.s
+
+# target to generate assembly for a file
+RBC/libs/rbc_can.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.s
+.PHONY : RBC/libs/rbc_can.c.s
 
 RBC/main_rbc.o: RBC/main_rbc.c.o
 
@@ -256,6 +353,63 @@ RBC/tests/test_aig_queue.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/tests/test_aig_queue.c.s
 .PHONY : RBC/tests/test_aig_queue.c.s
 
+RBC/tests/test_parsing_train.o: RBC/tests/test_parsing_train.c.o
+
+.PHONY : RBC/tests/test_parsing_train.o
+
+# target to build an object file
+RBC/tests/test_parsing_train.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/tests/test_parsing_train.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.o
+.PHONY : RBC/tests/test_parsing_train.c.o
+
+RBC/tests/test_parsing_train.i: RBC/tests/test_parsing_train.c.i
+
+.PHONY : RBC/tests/test_parsing_train.i
+
+# target to preprocess a source file
+RBC/tests/test_parsing_train.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/tests/test_parsing_train.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.i
+.PHONY : RBC/tests/test_parsing_train.c.i
+
+RBC/tests/test_parsing_train.s: RBC/tests/test_parsing_train.c.s
+
+.PHONY : RBC/tests/test_parsing_train.s
+
+# target to generate assembly for a file
+RBC/tests/test_parsing_train.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/tests/test_parsing_train.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.s
+.PHONY : RBC/tests/test_parsing_train.c.s
+
+RBC/tests/testlog.o: RBC/tests/testlog.c.o
+
+.PHONY : RBC/tests/testlog.o
+
+# target to build an object file
+RBC/tests/testlog.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/tests/testlog.c.o
+.PHONY : RBC/tests/testlog.c.o
+
+RBC/tests/testlog.i: RBC/tests/testlog.c.i
+
+.PHONY : RBC/tests/testlog.i
+
+# target to preprocess a source file
+RBC/tests/testlog.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/tests/testlog.c.i
+.PHONY : RBC/tests/testlog.c.i
+
+RBC/tests/testlog.s: RBC/tests/testlog.c.s
+
+.PHONY : RBC/tests/testlog.s
+
+# target to generate assembly for a file
+RBC/tests/testlog.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/tests/testlog.c.s
+.PHONY : RBC/tests/testlog.c.s
+
 RPI_Train/main_train.o: RPI_Train/main_train.c.o
 
 .PHONY : RPI_Train/main_train.o
@@ -294,15 +448,31 @@ help:
 	@echo "... RBC"
 	@echo "... RPI_Train"
 	@echo "... TEST_FILE"
-	@echo "... RBC/aiguillage_queue.o"
-	@echo "... RBC/aiguillage_queue.i"
-	@echo "... RBC/aiguillage_queue.s"
+	@echo "... TEST_PARSER"
+	@echo "... RBC/libs/aiguillage_queue.o"
+	@echo "... RBC/libs/aiguillage_queue.i"
+	@echo "... RBC/libs/aiguillage_queue.s"
+	@echo "... RBC/libs/config_parser.o"
+	@echo "... RBC/libs/config_parser.i"
+	@echo "... RBC/libs/config_parser.s"
+	@echo "... RBC/libs/log.o"
+	@echo "... RBC/libs/log.i"
+	@echo "... RBC/libs/log.s"
+	@echo "... RBC/libs/rbc_can.o"
+	@echo "... RBC/libs/rbc_can.i"
+	@echo "... RBC/libs/rbc_can.s"
 	@echo "... RBC/main_rbc.o"
 	@echo "... RBC/main_rbc.i"
 	@echo "... RBC/main_rbc.s"
 	@echo "... RBC/tests/test_aig_queue.o"
 	@echo "... RBC/tests/test_aig_queue.i"
 	@echo "... RBC/tests/test_aig_queue.s"
+	@echo "... RBC/tests/test_parsing_train.o"
+	@echo "... RBC/tests/test_parsing_train.i"
+	@echo "... RBC/tests/test_parsing_train.s"
+	@echo "... RBC/tests/testlog.o"
+	@echo "... RBC/tests/testlog.i"
+	@echo "... RBC/tests/testlog.s"
 	@echo "... RPI_Train/main_train.o"
 	@echo "... RPI_Train/main_train.i"
 	@echo "... RPI_Train/main_train.s"

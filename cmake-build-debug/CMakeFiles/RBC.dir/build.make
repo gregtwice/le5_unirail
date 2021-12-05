@@ -77,22 +77,9 @@ include CMakeFiles/RBC.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/RBC.dir/flags.make
 
-CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.o: CMakeFiles/RBC.dir/flags.make
-CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.o: ../RBC/aiguillage_queue.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gregoire/Documents/IG2I/LE5/UNIRAIL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.o   -c /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/aiguillage_queue.c
-
-CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/aiguillage_queue.c > CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.i
-
-CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/aiguillage_queue.c -o CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.s
-
 CMakeFiles/RBC.dir/RBC/main_rbc.c.o: CMakeFiles/RBC.dir/flags.make
 CMakeFiles/RBC.dir/RBC/main_rbc.c.o: ../RBC/main_rbc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gregoire/Documents/IG2I/LE5/UNIRAIL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/RBC.dir/RBC/main_rbc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gregoire/Documents/IG2I/LE5/UNIRAIL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/RBC.dir/RBC/main_rbc.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RBC.dir/RBC/main_rbc.c.o   -c /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/main_rbc.c
 
 CMakeFiles/RBC.dir/RBC/main_rbc.c.i: cmake_force
@@ -102,6 +89,19 @@ CMakeFiles/RBC.dir/RBC/main_rbc.c.i: cmake_force
 CMakeFiles/RBC.dir/RBC/main_rbc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RBC.dir/RBC/main_rbc.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/main_rbc.c -o CMakeFiles/RBC.dir/RBC/main_rbc.c.s
+
+CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.o: CMakeFiles/RBC.dir/flags.make
+CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.o: ../RBC/libs/aiguillage_queue.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gregoire/Documents/IG2I/LE5/UNIRAIL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.o   -c /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/libs/aiguillage_queue.c
+
+CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/libs/aiguillage_queue.c > CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.i
+
+CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/libs/aiguillage_queue.c -o CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.s
 
 CMakeFiles/RBC.dir/RBC/tests/test_aig_queue.c.o: CMakeFiles/RBC.dir/flags.make
 CMakeFiles/RBC.dir/RBC/tests/test_aig_queue.c.o: ../RBC/tests/test_aig_queue.c
@@ -116,21 +116,81 @@ CMakeFiles/RBC.dir/RBC/tests/test_aig_queue.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RBC.dir/RBC/tests/test_aig_queue.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/tests/test_aig_queue.c -o CMakeFiles/RBC.dir/RBC/tests/test_aig_queue.c.s
 
+CMakeFiles/RBC.dir/RBC/libs/config_parser.c.o: CMakeFiles/RBC.dir/flags.make
+CMakeFiles/RBC.dir/RBC/libs/config_parser.c.o: ../RBC/libs/config_parser.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gregoire/Documents/IG2I/LE5/UNIRAIL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/RBC.dir/RBC/libs/config_parser.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RBC.dir/RBC/libs/config_parser.c.o   -c /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/libs/config_parser.c
+
+CMakeFiles/RBC.dir/RBC/libs/config_parser.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RBC.dir/RBC/libs/config_parser.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/libs/config_parser.c > CMakeFiles/RBC.dir/RBC/libs/config_parser.c.i
+
+CMakeFiles/RBC.dir/RBC/libs/config_parser.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RBC.dir/RBC/libs/config_parser.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/libs/config_parser.c -o CMakeFiles/RBC.dir/RBC/libs/config_parser.c.s
+
+CMakeFiles/RBC.dir/RBC/tests/testlog.c.o: CMakeFiles/RBC.dir/flags.make
+CMakeFiles/RBC.dir/RBC/tests/testlog.c.o: ../RBC/tests/testlog.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gregoire/Documents/IG2I/LE5/UNIRAIL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/RBC.dir/RBC/tests/testlog.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RBC.dir/RBC/tests/testlog.c.o   -c /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/tests/testlog.c
+
+CMakeFiles/RBC.dir/RBC/tests/testlog.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RBC.dir/RBC/tests/testlog.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/tests/testlog.c > CMakeFiles/RBC.dir/RBC/tests/testlog.c.i
+
+CMakeFiles/RBC.dir/RBC/tests/testlog.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RBC.dir/RBC/tests/testlog.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/tests/testlog.c -o CMakeFiles/RBC.dir/RBC/tests/testlog.c.s
+
+CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.o: CMakeFiles/RBC.dir/flags.make
+CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.o: ../RBC/tests/test_parsing_train.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gregoire/Documents/IG2I/LE5/UNIRAIL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.o   -c /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/tests/test_parsing_train.c
+
+CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/tests/test_parsing_train.c > CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.i
+
+CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/tests/test_parsing_train.c -o CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.s
+
+CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.o: CMakeFiles/RBC.dir/flags.make
+CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.o: ../RBC/libs/rbc_can.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gregoire/Documents/IG2I/LE5/UNIRAIL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.o   -c /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/libs/rbc_can.c
+
+CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/libs/rbc_can.c > CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.i
+
+CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/gregoire/Documents/IG2I/LE5/UNIRAIL/RBC/libs/rbc_can.c -o CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.s
+
 # Object files for target RBC
 RBC_OBJECTS = \
-"CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.o" \
 "CMakeFiles/RBC.dir/RBC/main_rbc.c.o" \
-"CMakeFiles/RBC.dir/RBC/tests/test_aig_queue.c.o"
+"CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.o" \
+"CMakeFiles/RBC.dir/RBC/tests/test_aig_queue.c.o" \
+"CMakeFiles/RBC.dir/RBC/libs/config_parser.c.o" \
+"CMakeFiles/RBC.dir/RBC/tests/testlog.c.o" \
+"CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.o" \
+"CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.o"
 
 # External object files for target RBC
 RBC_EXTERNAL_OBJECTS =
 
-RBC: CMakeFiles/RBC.dir/RBC/aiguillage_queue.c.o
 RBC: CMakeFiles/RBC.dir/RBC/main_rbc.c.o
+RBC: CMakeFiles/RBC.dir/RBC/libs/aiguillage_queue.c.o
 RBC: CMakeFiles/RBC.dir/RBC/tests/test_aig_queue.c.o
+RBC: CMakeFiles/RBC.dir/RBC/libs/config_parser.c.o
+RBC: CMakeFiles/RBC.dir/RBC/tests/testlog.c.o
+RBC: CMakeFiles/RBC.dir/RBC/tests/test_parsing_train.c.o
+RBC: CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.o
 RBC: CMakeFiles/RBC.dir/build.make
 RBC: CMakeFiles/RBC.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gregoire/Documents/IG2I/LE5/UNIRAIL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable RBC"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gregoire/Documents/IG2I/LE5/UNIRAIL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable RBC"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RBC.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
