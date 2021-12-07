@@ -220,6 +220,7 @@ RBC/libs/config_parser.o: RBC/libs/config_parser.c.o
 RBC/libs/config_parser.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/libs/config_parser.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/config_parser.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/config_parser.c.o
 .PHONY : RBC/libs/config_parser.c.o
 
 RBC/libs/config_parser.i: RBC/libs/config_parser.c.i
@@ -230,6 +231,7 @@ RBC/libs/config_parser.i: RBC/libs/config_parser.c.i
 RBC/libs/config_parser.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/libs/config_parser.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/config_parser.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/config_parser.c.i
 .PHONY : RBC/libs/config_parser.c.i
 
 RBC/libs/config_parser.s: RBC/libs/config_parser.c.s
@@ -240,6 +242,7 @@ RBC/libs/config_parser.s: RBC/libs/config_parser.c.s
 RBC/libs/config_parser.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/libs/config_parser.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/config_parser.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/config_parser.c.s
 .PHONY : RBC/libs/config_parser.c.s
 
 RBC/libs/log.o: RBC/libs/log.c.o
@@ -249,6 +252,7 @@ RBC/libs/log.o: RBC/libs/log.c.o
 # target to build an object file
 RBC/libs/log.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/libs/log.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/log.c.o
 .PHONY : RBC/libs/log.c.o
 
 RBC/libs/log.i: RBC/libs/log.c.i
@@ -258,6 +262,7 @@ RBC/libs/log.i: RBC/libs/log.c.i
 # target to preprocess a source file
 RBC/libs/log.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/libs/log.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/log.c.i
 .PHONY : RBC/libs/log.c.i
 
 RBC/libs/log.s: RBC/libs/log.c.s
@@ -267,6 +272,7 @@ RBC/libs/log.s: RBC/libs/log.c.s
 # target to generate assembly for a file
 RBC/libs/log.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_PARSER.dir/build.make CMakeFiles/TEST_PARSER.dir/RBC/libs/log.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/log.c.s
 .PHONY : RBC/libs/log.c.s
 
 RBC/libs/rbc_can.o: RBC/libs/rbc_can.c.o
@@ -276,6 +282,7 @@ RBC/libs/rbc_can.o: RBC/libs/rbc_can.c.o
 # target to build an object file
 RBC/libs/rbc_can.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/rbc_can.c.o
 .PHONY : RBC/libs/rbc_can.c.o
 
 RBC/libs/rbc_can.i: RBC/libs/rbc_can.c.i
@@ -285,6 +292,7 @@ RBC/libs/rbc_can.i: RBC/libs/rbc_can.c.i
 # target to preprocess a source file
 RBC/libs/rbc_can.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/rbc_can.c.i
 .PHONY : RBC/libs/rbc_can.c.i
 
 RBC/libs/rbc_can.s: RBC/libs/rbc_can.c.s
@@ -294,7 +302,35 @@ RBC/libs/rbc_can.s: RBC/libs/rbc_can.c.s
 # target to generate assembly for a file
 RBC/libs/rbc_can.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/libs/rbc_can.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/rbc_can.c.s
 .PHONY : RBC/libs/rbc_can.c.s
+
+RBC/libs/train_comm.o: RBC/libs/train_comm.c.o
+
+.PHONY : RBC/libs/train_comm.o
+
+# target to build an object file
+RBC/libs/train_comm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/train_comm.c.o
+.PHONY : RBC/libs/train_comm.c.o
+
+RBC/libs/train_comm.i: RBC/libs/train_comm.c.i
+
+.PHONY : RBC/libs/train_comm.i
+
+# target to preprocess a source file
+RBC/libs/train_comm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/train_comm.c.i
+.PHONY : RBC/libs/train_comm.c.i
+
+RBC/libs/train_comm.s: RBC/libs/train_comm.c.s
+
+.PHONY : RBC/libs/train_comm.s
+
+# target to generate assembly for a file
+RBC/libs/train_comm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/libs/train_comm.c.s
+.PHONY : RBC/libs/train_comm.c.s
 
 RBC/main_rbc.o: RBC/main_rbc.c.o
 
@@ -302,7 +338,7 @@ RBC/main_rbc.o: RBC/main_rbc.c.o
 
 # target to build an object file
 RBC/main_rbc.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/main_rbc.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/main_rbc.c.o
 .PHONY : RBC/main_rbc.c.o
 
 RBC/main_rbc.i: RBC/main_rbc.c.i
@@ -311,7 +347,7 @@ RBC/main_rbc.i: RBC/main_rbc.c.i
 
 # target to preprocess a source file
 RBC/main_rbc.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/main_rbc.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/main_rbc.c.i
 .PHONY : RBC/main_rbc.c.i
 
 RBC/main_rbc.s: RBC/main_rbc.c.s
@@ -320,7 +356,7 @@ RBC/main_rbc.s: RBC/main_rbc.c.s
 
 # target to generate assembly for a file
 RBC/main_rbc.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/main_rbc.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/main_rbc.c.s
 .PHONY : RBC/main_rbc.c.s
 
 RBC/tests/test_aig_queue.o: RBC/tests/test_aig_queue.c.o
@@ -330,7 +366,6 @@ RBC/tests/test_aig_queue.o: RBC/tests/test_aig_queue.c.o
 # target to build an object file
 RBC/tests/test_aig_queue.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/tests/test_aig_queue.c.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/tests/test_aig_queue.c.o
 .PHONY : RBC/tests/test_aig_queue.c.o
 
 RBC/tests/test_aig_queue.i: RBC/tests/test_aig_queue.c.i
@@ -340,7 +375,6 @@ RBC/tests/test_aig_queue.i: RBC/tests/test_aig_queue.c.i
 # target to preprocess a source file
 RBC/tests/test_aig_queue.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/tests/test_aig_queue.c.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/tests/test_aig_queue.c.i
 .PHONY : RBC/tests/test_aig_queue.c.i
 
 RBC/tests/test_aig_queue.s: RBC/tests/test_aig_queue.c.s
@@ -350,7 +384,6 @@ RBC/tests/test_aig_queue.s: RBC/tests/test_aig_queue.c.s
 # target to generate assembly for a file
 RBC/tests/test_aig_queue.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/RBC.dir/build.make CMakeFiles/RBC.dir/RBC/tests/test_aig_queue.c.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/TEST_FILE.dir/build.make CMakeFiles/TEST_FILE.dir/RBC/tests/test_aig_queue.c.s
 .PHONY : RBC/tests/test_aig_queue.c.s
 
 RBC/tests/test_parsing_train.o: RBC/tests/test_parsing_train.c.o
@@ -461,6 +494,9 @@ help:
 	@echo "... RBC/libs/rbc_can.o"
 	@echo "... RBC/libs/rbc_can.i"
 	@echo "... RBC/libs/rbc_can.s"
+	@echo "... RBC/libs/train_comm.o"
+	@echo "... RBC/libs/train_comm.i"
+	@echo "... RBC/libs/train_comm.s"
 	@echo "... RBC/main_rbc.o"
 	@echo "... RBC/main_rbc.i"
 	@echo "... RBC/main_rbc.s"

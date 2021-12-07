@@ -25,12 +25,16 @@ int parsetrainconfig(const char *filename, trainConfig_t *config) {
         if (sscanf(buffer, "Id:\t%d", &config->id)) {
             log_debug("Dans le fichier : %s id du train trouvé : %d", filename, config->id);
             continue;
-        }
-        if (buffer[0] == '\t')
+        } else if (buffer[0] == '\t') {
             if (sscanf(buffer, "\t%s :\t%X", config->cantons[nb_cantons].nom, &config->cantons[nb_cantons].id)) {
                 log_debug("Canton %s : Adresse : %d", config->cantons[nb_cantons].nom, config->cantons[nb_cantons].id);
                 nb_cantons++;
             }
+        } else if (sscanf(buffer, "Distance: %d", &config->distance_totale)) {
+            log_debug("Distance : %d", config->distance_totale);
+        } else if (sscanf(buffer, "Ip: %s", config->ip_addr)) {
+            log_debug("%s", config->ip_addr);
+        }
     }
     for (int i = 0; i < nb_cantons; ++i) {
         if (i + 1 < nb_cantons)
@@ -46,6 +50,7 @@ int parseCantonWatcher(const char *filename, canton_t cantons[20]) {
     FILE *fp = fopen(filename, "r");
     if (fp == NULL) {
         log_fatal("Impossible d'ouvrir le fichier %s", filename);
+        exit(0);
     }
 
     char buffer[MAX_CAR];
@@ -55,7 +60,9 @@ int parseCantonWatcher(const char *filename, canton_t cantons[20]) {
         if (strlen(buffer) == 0 || buffer[0] != 'C') {
             continue;
         }
-        sscanf("%s\t:\t%X", cantons[nb_cantons].nom, &cantons[nb_cantons].id);
+        sscanf(buffer, "%s\t:\t%d\t:\t%d", cantons[nb_cantons].nom, &cantons[nb_cantons].id, &cantons[nb_cantons].vmax);
+        globalInfo.occupationCanton[nb_cantons].id = cantons[nb_cantons].id;
+        nb_cantons++;
     }
 
     return 0;

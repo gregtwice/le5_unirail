@@ -18,38 +18,49 @@
 #define MS 1000
 #define S  1000000
 
-
-typedef struct RBC_Info_s {
-    int canPort;
-} RBC_Info;
-RBC_Info Rbc_Global_Info;
-
 _Noreturn void *occupationHandler() {
+    struct can_filter filter[20];
+//    filter[0].can_id = 0x37B;
+//    filter[0].can_mask = CAN_SFF_MASK;
 
+    // il y a 20 cantons a surveiller;
+    canton_t canton[20];
+    parseCantonWatcher("./config/cantons_watcher.conf", canton);
+    fillFilter(filter, canton);
+
+
+    log_debug("sizeof = %d", sizeof(filter));
+    int port = canLinux_Init("can0");
+    canLinux_InitFilter(port, filter, sizeof(filter));
     for (;;) {
         //TODO filtrer les trames avec l'id du canton
-        usleep(150 * MS);
-        int port = canLinux_Init("can0");
-        // il y a 22 cantons a surveiller;
-        struct can_filter filter[22];
 
+        uCAN1_MSG trame_rcv;
+        if (ECAN1_receive(port, &trame_rcv)) {
+//            for (int i = 0; i < 20; ++i) {
+//                if (trame_rcv.frame.id == (0x39A)) {
+            log_debug("trame id : %#X dlc : %d", trame_rcv.frame.id, trame_rcv.frame.dlc);
+            log_debug("\tdata[0] = %d\n\tdata[1] = %d\n\tdata[2] = %d", trame_rcv.frame.data0, trame_rcv.frame.data1, trame_rcv.frame.data2);
+//                }
+//            }
+
+        }
+        usleep(20 * MS);
     }
 }
 
 _Noreturn void *aiguillageHandler() {
-    for (;;) {
+    int portCan = canLinux_Init("can0");
 
-        printf("\tNouveau message a défiler\n");
-        printf("Nb Elems dans la file : %d\n", file_Messages.nb_elems);
+    for (;;) {
         Aiguillage_Message_t *message_to_send = defiler_message();
         if (message_to_send == NULL) {
-            printf("C'est vide !!!\n");
             usleep(150 * MS);
             continue;
         }
-        printf("\tMessage défilé avec succès\n");
+        log_trace("Trouvé un message à envoyer");
         //TODO : filtrer les trames avec l'id de l'aiguillage.
-        int portCan = canLinux_Init("can0");
+
         afficher_message(*message_to_send);
         uCAN1_MSG consigneAiguillage;
         consigneAiguillage.frame.id = message_to_send->id;
@@ -64,7 +75,7 @@ _Noreturn void *aiguillageHandler() {
         } else {
             printf("Erreur de transmission de la trame !! \n");
         }
-        usleep(150 * MS);
+        usleep(10 * MS);
         uCAN1_MSG cro;
         ECAN1_receive(portCan, &cro);
         printf("Message recu !!\n");
@@ -74,27 +85,44 @@ _Noreturn void *aiguillageHandler() {
         printf("DATA[2] = %#02x\n", cro.frame.data2);
         printf("\n");
 
-        usleep(150 * MS);
+        usleep(10 * MS);
     }
 
 }
 
-void *connexionHandler(void *sock_param) {
-    puts("Nouveau train connecté");
-
-    return NULL;
+_Noreturn void *connexionHandler(void *sock_param) {
+    log_debug("Nouveau train connecté");
+    int sock = *(int *) sock_param;
+    char header[2];
+    int nread;
+    char id_train;
+    char size;
+    for (;;) {
+        // Lire le début de trame
+        nread = read(sock, header, 2);
+        if (nread <= 0) {
+            pthread_exit(0);
+        }
+        id_train = header[0];
+        size = header[1];
+        log_debug("Taille de la trame : %d", size);
+        char buffer[size];
+        read(sock, buffer, size);
+        log_debug("Trame recue :%s", buffer);
+    }
 }
 
 
 int main() {
-    printf("Programme de gestion du RBC\n");
+    pthread_mutex_init(&globalInfo.Lock, NULL);
     initMessageQueue();
-    parsetrainconfig("./config/train1.conf",&globalInfo.config.config_trains[0]);
-    parsetrainconfig("./config/train2.conf",&globalInfo.config.config_trains[1]);
-    parsetrainconfig("./config/train3.conf",&globalInfo.config.config_trains[2]);
+    log_debug("File des aiguillages initialisée");
+    parsetrainconfig("./config/train1.conf", &globalInfo.config.config_trains[0]);
+    parsetrainconfig("./config/train2.conf", &globalInfo.config.config_trains[1]);
+    parsetrainconfig("./config/train3.conf", &globalInfo.config.config_trains[2]);
 
     // création de la socket
-    puts("Lancement de la socket");
+    log_debug("Lancement du serveur");
     int sd, se;
     struct sockaddr_in svc, clt;
     socklen_t cltLen;
@@ -114,38 +142,20 @@ int main() {
     }
     printf("valeur de la socket : %d\n", se);
 
-    printf("Lancement du bus CAN\n");
-    char *NomPort = "can0";
-    // Definition d'une variable pour memoriser le descripteur de port CAN ouvert
-    int canPort;
-    //Definition d'un filtre CAN pour preciser les identifiant a lire
-    struct can_filter rfilter[1]; //Le filtre sera limite ici a une variable
-    canPort = canLinux_Init(NomPort);
-
-    // Mise en place d'un filtre
-    canLinux_InitFilter(canPort, rfilter, sizeof(rfilter));
-    printf("Bus can Lancé !! \n");
-
-    pthread_t threadAPI, treadAiguillage, threadOccupation;
+    pthread_t threadAPI, threadAiguillage, threadOccupation;
     printf("Création du thread de gestion de l'aiguillage\n");
-    pthread_create(&treadAiguillage, NULL, aiguillageHandler, NULL);
-    pthread_detach(treadAiguillage);
+    pthread_create(&threadAiguillage, NULL, aiguillageHandler, NULL);
+    pthread_detach(threadAiguillage);
     pthread_create(&threadOccupation, NULL, occupationHandler, NULL);
+    pthread_detach(threadOccupation);
+
     printf("Ajout des messages dans la file !!\n");
-    Aiguillage_Message_t message1 = {
-            .aigAction = UNLOCK,
-            .id = ID_AIG_1,
-            .position = 0,
-            .sent = 0
-    };
-    enfiler_message(&message1);
-    Aiguillage_Message_t message2 = {
-            .aigAction = MVT,
-            .id = ID_AIG_1,
-            .position = 0x01,
-            .sent = 0
-    };
-    enfiler_message(&message2);
+
+    for (int i = 16; i < 32; ++i) {
+        positionnerAiguillage((i << 4) + 2, DROIT);
+        usleep(300*MS);
+    }
+
     listen(se, 4);
     printf("Lancement de la boucle de service\n");
     while (1) {

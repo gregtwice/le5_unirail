@@ -13,6 +13,11 @@ typedef enum {
     INIT = 0x49, // I
 } AIG_ACTION;
 
+typedef enum {
+    DROIT,
+    BIAIS
+} AIG_POSTION;
+
 typedef struct {
     AIG_ACTION aigAction;
     int id;
