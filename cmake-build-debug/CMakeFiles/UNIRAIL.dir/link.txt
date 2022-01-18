@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/UNIRAIL.dir/main.c.o CMakeFiles/UNIRAIL.dir/RPI_Train/main_train.c.o CMakeFiles/UNIRAIL.dir/RBC/main_rbc.c.o  -o UNIRAIL 

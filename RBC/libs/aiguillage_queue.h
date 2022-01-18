@@ -4,7 +4,7 @@
 #include <pthread.h>
 
 
-#define MAX_ORDER_AIGUILLAGE 10
+#define MAX_ORDER_AIGUILLAGE 20
 
 typedef enum {
     MVT = 0x57, // W
@@ -19,10 +19,9 @@ typedef enum {
 } AIG_POSTION;
 
 typedef struct {
-    AIG_ACTION aigAction;
     int id;
     char position;
-    char sent;
+    char sent_by;
 } Aiguillage_Message_t;
 
 typedef struct mq {
@@ -40,6 +39,7 @@ int enfiler_message(Aiguillage_Message_t *message);
 Aiguillage_Message_t *defiler_message();
 
 void afficher_message(Aiguillage_Message_t message);
+
 
 
 #endif //UNIRAIL_AIGUILLAGE_QUEUE_H

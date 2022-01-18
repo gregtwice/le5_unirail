@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project(RBC_LE5)
 find_package (Threads)
-find_library(wiringPi_LIB wiringPi)
+#find_library(wiringPi_LIB wiringPi)
 add_definitions(-DMC802=0)
 set (PATH_LIB_UNIRAIL ../Libs_Unirail/)
 include_directories(${PATH_LIB_UNIRAIL})
@@ -18,6 +18,8 @@ set(SRCS
         libs/config_parser.c
         libs/rbc_can.c
         main_rbc.c
+        libs/train_comm.c
+        libs/canton_ressources.c
         )
 
 set(HEADERS
@@ -28,7 +30,9 @@ set(HEADERS
         libs/aiguillage_queue.h
         libs/log.h
         libs/rbc_utils.h
-#        ${PATH_LIB_UNIRAIL}CAN/MESCAN1_ID&DLC_LOCO.h
+        libs/cores_bal_can.h
+        libs/canton_ressources.h
+        #        ${PATH_LIB_UNIRAIL}CAN/MESCAN1_ID&DLC_LOCO.h
         ${PATH_LIB_UNIRAIL}CAN/Identificateur.h
         ${PATH_LIB_UNIRAIL}CAN/MESCAN1_VarStatusTrain.h
         ${PATH_LIB_UNIRAIL}CAN/MESCAN1_VarTrain.h
@@ -42,6 +46,6 @@ target_compile_options(${EXECUTABLE} PRIVATE -Wall -DVERBOSE -DLOG_USE_COLOR)
 
 #inclusion des libs (equivalent a -lwiringPi -lpthread -lm)
 target_link_libraries( ${EXECUTABLE} pthread )
-target_link_libraries( ${EXECUTABLE} wiringPi )
+#target_link_libraries( ${EXECUTABLE} wiringPi )
 target_link_libraries( ${EXECUTABLE} m )
 target_link_libraries( ${EXECUTABLE} rt )

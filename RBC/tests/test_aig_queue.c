@@ -20,7 +20,7 @@ int main() {
     Aiguillage_Message_t message9;
     Aiguillage_Message_t message10;
     Aiguillage_Message_t message11;
-    message1.sent = 0;
+//    message1.sent = 0;
     printf("FO = %d | LI = %d | N = %d\n", file_Messages.fo, file_Messages.li, file_Messages.nb_elems);
     enfiler_message(&message1);
     defiler_message();

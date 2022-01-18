@@ -26,7 +26,7 @@ int parsetrainconfig(const char *filename, trainConfig_t *config) {
             log_debug("Dans le fichier : %s id du train trouvé : %d", filename, config->id);
             continue;
         } else if (buffer[0] == '\t') {
-            if (sscanf(buffer, "\t%s :\t%X", config->cantons[nb_cantons].nom, &config->cantons[nb_cantons].id)) {
+            if (sscanf(buffer, "\t%s :\t%d\t:\t%d\t:\t%d", config->cantons[nb_cantons].nom, &config->cantons[nb_cantons].id,&config->cantons[nb_cantons].distance,&config->cantons[nb_cantons].vmax)) {
                 log_debug("Canton %s : Adresse : %d", config->cantons[nb_cantons].nom, config->cantons[nb_cantons].id);
                 nb_cantons++;
             }

@@ -3,32 +3,31 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "aiguillage_queue.h"
 
 Aiguillage_Message_t *defiler_message() {
-    pthread_mutex_lock(&file_Messages.Lock);
+
     if (file_Messages.nb_elems == 0) {
-        pthread_mutex_unlock(&file_Messages.Lock);
         return NULL; // On défile du vide
     }
     Aiguillage_Message_t *toReturn = file_Messages.messages[file_Messages.fo];
     file_Messages.messages[file_Messages.fo] = NULL;
     file_Messages.fo = (file_Messages.fo + 1) % MAX_ORDER_AIGUILLAGE;
     file_Messages.nb_elems--;
-    pthread_mutex_unlock(&file_Messages.Lock);
+
     return toReturn;
 }
 
 int enfiler_message(Aiguillage_Message_t *message) {
-    pthread_mutex_lock(&file_Messages.Lock);
+
     if (file_Messages.nb_elems > MAX_ORDER_AIGUILLAGE - 1) {
-        pthread_mutex_unlock(&file_Messages.Lock);
         return 1; // LA FILE EST PLEINE;
     }
     file_Messages.li = (file_Messages.li + 1) % MAX_ORDER_AIGUILLAGE;
     file_Messages.messages[file_Messages.li] = message;
     file_Messages.nb_elems++;
-    pthread_mutex_unlock(&file_Messages.Lock);
+
     return 0;
 }
 
@@ -39,10 +38,10 @@ void initMessageQueue() {
     file_Messages.nb_elems = 0;
 }
 
+
 void afficher_message(Aiguillage_Message_t message) {
-    printf("Message.id : %#02x\nMessage.Action : %#02x\nMessage.position : %#02x",
-           message.id,
-           message.aigAction,
-           message.position);
+    printf("Message.id : %#02x\nMessage.Action : %#02x\nMessage.position : %#02x", message.id, message.position, message.position);
 }
+
+
 

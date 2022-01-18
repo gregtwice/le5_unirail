@@ -2,3 +2,15 @@
 .idea/
 
 cmake-build-debug/CMakeFiles/
+
+cmake-build-debug/
+
+RPI_Train/
+
+*.log
+
+RBC/CMakeFiles/
+
+RBC/CMakeCache.txt
+
+RBC/cmake_install.cmake
